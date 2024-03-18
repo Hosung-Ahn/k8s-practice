@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: host-pvc # pod 에서 pvc 를 지정할 때 사용됌
+spec:
+  volumeName: host-pv # 사용할 pv 
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: standard
+  resources: 
+    requests:
+      storage: 1Gi # pv 에서 설장한 게 1Gi 이므로 최대 1Gi 까지 설정 가능 
